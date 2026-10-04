@@ -1,0 +1,491 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  font-family: "Poppins", sans-serif;
+  background: #000;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+
+/* =========================
+   VIDEO UTAMA
+========================= */
+
+.invitation-video {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  background: #000;
+}
+
+
+/* =========================
+   LAPISAN DI ATAS VIDEO
+========================= */
+
+.video-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+
+/* =========================
+   TOMBOL SOUND
+========================= */
+
+.sound-button {
+  position: fixed;
+  top: 25px;
+  right: 25px;
+
+  width: 48px;
+  height: 48px;
+
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(6px);
+
+  color: #fff;
+  font-size: 20px;
+
+  cursor: pointer;
+  z-index: 10;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  pointer-events: auto;
+
+  transition: all 0.3s ease;
+}
+
+.sound-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.08);
+}
+
+
+/* =========================
+   OPEN INVITATION
+========================= */
+
+.open-button {
+  position: fixed;
+
+  left: 50%;
+  bottom: 55px;
+
+  transform: translateX(-50%);
+
+  padding: 14px 32px;
+
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 40px;
+
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+
+  color: #fff;
+
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+
+  cursor: pointer;
+  z-index: 10;
+
+  pointer-events: auto;
+
+  transition: all 0.35s ease;
+}
+
+.open-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateX(-50%) scale(1.05);
+}
+
+
+/* =========================
+   KONTEN UNDANGAN
+========================= */
+
+.invitation-content {
+  position: relative;
+
+  z-index: 5;
+
+  min-height: 100vh;
+
+  padding: 80px 20px;
+
+  background: rgba(0, 0, 0, 0.45);
+
+  text-align: center;
+
+  display: none;
+}
+
+
+/* Ketika invitation dibuka */
+
+.invitation-content.active {
+  display: block;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.invitation-header {
+  max-width: 700px;
+  margin: 0 auto 80px;
+}
+
+.invitation-header h1 {
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(48px, 8vw, 90px);
+
+  font-weight: 400;
+
+  letter-spacing: 5px;
+
+  margin-bottom: 20px;
+}
+
+.invitation-header p {
+  font-size: 15px;
+  letter-spacing: 3px;
+}
+
+
+/* =========================
+   SECTION
+========================= */
+
+.invitation-section {
+  max-width: 700px;
+
+  margin: 0 auto 70px;
+
+  padding: 35px 25px;
+
+  background: rgba(255, 255, 255, 0.1);
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
+  border-radius: 20px;
+
+  backdrop-filter: blur(8px);
+}
+
+.invitation-section h2 {
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 38px;
+
+  font-weight: 400;
+
+  margin-bottom: 20px;
+}
+
+.invitation-section p {
+  font-size: 15px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================
+   COUNTDOWN
+========================= */
+
+.countdown {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 15px;
+
+  flex-wrap: wrap;
+
+  margin-top: 25px;
+}
+
+.countdown-box {
+  min-width: 90px;
+
+  padding: 18px 12px;
+
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.15);
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.countdown-box span {
+  display: block;
+
+  font-size: 30px;
+
+  font-weight: 500;
+}
+
+.countdown-box small {
+  display: block;
+
+  margin-top: 5px;
+
+  font-size: 11px;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================
+   BUTTON LOCATION
+========================= */
+
+.location-button {
+  display: inline-block;
+
+  margin-top: 25px;
+
+  padding: 13px 28px;
+
+  border-radius: 30px;
+
+  border: 1px solid rgba(255, 255, 255, 0.7);
+
+  background: rgba(255, 255, 255, 0.12);
+
+  color: #fff;
+
+  text-decoration: none;
+
+  font-size: 14px;
+
+  transition: all 0.3s ease;
+}
+
+.location-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================
+   RSVP FORM
+========================= */
+
+.rsvp-form {
+  max-width: 500px;
+
+  margin: 30px auto 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 15px;
+}
+
+.rsvp-form input,
+.rsvp-form select {
+  width: 100%;
+
+  padding: 14px 16px;
+
+  border: 1px solid rgba(255, 255, 255, 0.4);
+
+  border-radius: 10px;
+
+  background: rgba(255, 255, 255, 0.1);
+
+  color: #fff;
+
+  outline: none;
+
+  font-size: 14px;
+}
+
+.rsvp-form input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.rsvp-form select option {
+  color: #000;
+}
+
+.rsvp-form button {
+  padding: 14px;
+
+  border: none;
+
+  border-radius: 30px;
+
+  background: #fff;
+
+  color: #222;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+.rsvp-form button:hover {
+  transform: translateY(-2px);
+
+  opacity: 0.9;
+}
+
+
+/* =========================
+   PENUTUP
+========================= */
+
+.closing {
+  padding-bottom: 100px;
+}
+
+.closing h2 {
+  margin-bottom: 15px;
+}
+
+
+/* =========================
+   HP / MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+  .invitation-video {
+    object-fit: cover;
+  }
+
+  .sound-button {
+    top: 15px;
+    right: 15px;
+
+    width: 42px;
+    height: 42px;
+
+    font-size: 17px;
+  }
+
+  .open-button {
+    bottom: 30px;
+
+    padding: 12px 25px;
+
+    font-size: 12px;
+
+    letter-spacing: 1px;
+
+    white-space: nowrap;
+  }
+
+  .invitation-content {
+    padding: 60px 15px;
+  }
+
+  .invitation-header {
+    margin-bottom: 50px;
+  }
+
+  .invitation-header h1 {
+    font-size: 48px;
+
+    letter-spacing: 3px;
+  }
+
+  .invitation-header p {
+    font-size: 12px;
+
+    letter-spacing: 2px;
+  }
+
+  .invitation-section {
+    padding: 28px 18px;
+
+    margin-bottom: 45px;
+
+    border-radius: 15px;
+  }
+
+  .invitation-section h2 {
+    font-size: 32px;
+  }
+
+  .invitation-section p {
+    font-size: 13px;
+  }
+
+  .countdown {
+    gap: 8px;
+  }
+
+  .countdown-box {
+    min-width: 70px;
+
+    padding: 12px 8px;
+  }
+
+  .countdown-box span {
+    font-size: 23px;
+  }
+
+  .countdown-box small {
+    font-size: 9px;
+  }
+}
+
+
+/* =========================
+   LAPTOP / DESKTOP
+========================= */
+
+@media (min-width: 1000px) {
+
+  .open-button {
+    bottom: 60px;
+
+    padding: 16px 38px;
+
+    font-size: 15px;
+  }
+
+  .sound-button {
+    top: 30px;
+    right: 30px;
+  }
+}
