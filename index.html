@@ -1,0 +1,392 @@
+```html
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color"
+          content="#000000">
+
+    <meta name="description"
+          content="Save The Date - Irene & Yoel">
+
+    <title>Save The Date — Irene & Yoel</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
+          rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet"
+          href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- ==================================================
+         VIDEO UNDANGAN
+    =================================================== -->
+
+    <div class="invitation">
+
+        <video
+            id="invitationVideo"
+            class="invitation-video"
+            autoplay
+            muted
+            playsinline
+            preload="auto">
+
+            <!--
+                Nanti video kamu diletakkan di:
+
+                assets/invitation.mp4
+            -->
+
+            <source
+                src="assets/invitation.mp4"
+                type="video/mp4">
+
+            Browser kamu tidak mendukung video.
+        </video>
+
+
+        <!-- ==================================================
+             OVERLAY
+        =================================================== -->
+
+        <div class="video-overlay"></div>
+
+
+        <!-- ==================================================
+             TOMBOL SUARA
+        =================================================== -->
+
+        <button
+            id="soundButton"
+            class="sound-button"
+            type="button"
+            aria-label="Nyalakan suara">
+
+            🔇
+
+        </button>
+
+
+        <!-- ==================================================
+             TOMBOL OPEN INVITATION
+        =================================================== -->
+
+        <button
+            id="openButton"
+            class="open-button"
+            type="button">
+
+            Open Invitation
+
+        </button>
+
+
+    </div>
+
+
+
+    <!-- ==================================================
+         HALAMAN SETELAH OPEN INVITATION
+    =================================================== -->
+
+    <section
+        id="invitationContent"
+        class="invitation-content">
+
+
+        <!-- ==================================================
+             HEADER
+        =================================================== -->
+
+        <div class="content-header">
+
+            <p>
+                THE WEDDING OF
+            </p>
+
+            <h1>
+                Irene
+                <span>&</span>
+                Yoel
+            </h1>
+
+            <div class="gold-line"></div>
+
+            <p>
+                31 October 2026
+            </p>
+
+        </div>
+
+
+
+        <!-- ==================================================
+             COUNTDOWN
+        =================================================== -->
+
+        <section class="countdown-section">
+
+            <p class="section-label">
+                COUNTDOWN
+            </p>
+
+            <h2>
+                Counting Down To Our Day
+            </h2>
+
+
+            <div class="countdown">
+
+                <div class="count-box">
+
+                    <strong id="days">
+                        00
+                    </strong>
+
+                    <span>
+                        Days
+                    </span>
+
+                </div>
+
+
+                <div class="count-box">
+
+                    <strong id="hours">
+                        00
+                    </strong>
+
+                    <span>
+                        Hours
+                    </span>
+
+                </div>
+
+
+                <div class="count-box">
+
+                    <strong id="minutes">
+                        00
+                    </strong>
+
+                    <span>
+                        Minutes
+                    </span>
+
+                </div>
+
+
+                <div class="count-box">
+
+                    <strong id="seconds">
+                        00
+                    </strong>
+
+                    <span>
+                        Seconds
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             LOCATION
+        =================================================== -->
+
+        <section class="location-section">
+
+            <p class="section-label">
+                LOCATION
+            </p>
+
+            <h2>
+                Join Us
+            </h2>
+
+            <p>
+                Kami menantikan kehadiran
+                Anda untuk merayakan
+                hari istimewa kami.
+            </p>
+
+
+            <a
+                href="https://maps.app.goo.gl/ss9FSbURY6Giowka7"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="location-button">
+
+                📍 Open Google Maps
+
+            </a>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             RSVP
+        =================================================== -->
+
+        <section class="rsvp-section">
+
+            <p class="section-label">
+                RSVP
+            </p>
+
+            <h2>
+                Will You Join Us?
+            </h2>
+
+            <p>
+                Mohon konfirmasi kehadiran Anda.
+            </p>
+
+
+            <form id="rsvpForm">
+
+
+                <div class="form-group">
+
+                    <label for="guestName">
+                        Nama
+                    </label>
+
+                    <input
+                        id="guestName"
+                        type="text"
+                        placeholder="Nama Anda"
+                        required>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="attendance">
+                        Kehadiran
+                    </label>
+
+                    <select
+                        id="attendance"
+                        required>
+
+                        <option value="">
+                            Pilih konfirmasi
+                        </option>
+
+                        <option value="Hadir">
+                            Saya akan hadir
+                        </option>
+
+                        <option value="Tidak Hadir">
+                            Saya tidak dapat hadir
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="guestCount">
+                        Jumlah Tamu
+                    </label>
+
+                    <input
+                        id="guestCount"
+                        type="number"
+                        min="1"
+                        value="1"
+                        required>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="submit-button">
+
+                    Kirim RSVP
+
+                </button>
+
+
+            </form>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             CLOSING
+        =================================================== -->
+
+        <section class="closing-section">
+
+            <p>
+                WITH LOVE
+            </p>
+
+            <h2>
+                Irene
+                <span>&</span>
+                Yoel
+            </h2>
+
+            <div class="gold-line"></div>
+
+            <p>
+                31 . 10 . 2026
+            </p>
+
+            <p class="thank-you">
+                Thank you for being part
+                of our special day.
+            </p>
+
+        </section>
+
+
+    </section>
+
+
+
+    <!-- ==================================================
+         JAVASCRIPT
+    =================================================== -->
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>
+```
